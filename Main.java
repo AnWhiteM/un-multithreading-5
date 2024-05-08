@@ -15,7 +15,7 @@ public class Main {
         int width = sourceImage.getWidth();
         int height = sourceImage.getHeight();
 
-        // Create and start 4 threads
+        
         Thread[] threads = new Thread[4];
         for (int i = 0; i < 4; i++) {
             final int threadIndex = i;
