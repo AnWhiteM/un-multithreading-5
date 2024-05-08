@@ -27,7 +27,7 @@ public class Main {
             threads[i].start();
         }
 
-        // Wait for all threads to finish
+        
         for (Thread thread : threads) {
             try {
                 thread.join();
@@ -36,7 +36,7 @@ public class Main {
             }
         }
 
-        // Save output image
+       
         ImageIO.write(outputImage, "jpg", new File(OUTPUT_IMAGE));
     }
 
