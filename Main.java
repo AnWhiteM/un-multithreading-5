@@ -3,6 +3,7 @@ import java.awt.image.BufferedImage;
 import java.io.File;
 import java.io.IOException;
 
+
 public class Main {
 
     private static final String SOURCE_IMAGE = "source.jpg";
@@ -14,7 +15,7 @@ public class Main {
 
         int width = sourceImage.getWidth();
         int height = sourceImage.getHeight();
-
+        
         
         Thread[] threads = new Thread[4];
         for (int i = 0; i < 4; i++) {
@@ -26,8 +27,6 @@ public class Main {
             });
             threads[i].start();
         }
-
-        
         for (Thread thread : threads) {
             try {
                 thread.join();
@@ -35,7 +34,9 @@ public class Main {
                 e.printStackTrace();
             }
         }
-
+            
+        
+        
        
         ImageIO.write(outputImage, "jpg", new File(OUTPUT_IMAGE));
     }
